@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+import 'package:soal2_profil_app/screens/login_page.dart';
+
 
 void main() {
   runApp(const MyApp());
