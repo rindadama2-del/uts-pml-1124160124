@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soal2_profil_app/screens/profile_page.dart';
+import 'package:soal2_profil_app/screens/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const ProfilePage(), 
+      home: const LoginPage(), 
     );
   }
 }

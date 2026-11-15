@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soal2_profil_app/screens/profile_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,7 +13,7 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _isLoading = false;
 
-  void _prosesLogin() async {
+void _prosesLogin() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
         _isLoading = true;
@@ -26,9 +27,10 @@ class _LoginPageState extends State<LoginPage> {
 
       if (!mounted) return;
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Login valid! Siap pakai pushReplacement.'),
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const ProfilePage(),
         ),
       );
     }
