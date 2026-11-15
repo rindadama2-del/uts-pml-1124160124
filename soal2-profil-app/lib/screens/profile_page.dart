@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
+import 'about_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -29,6 +30,37 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text('Profil Saya'),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text(userProfile.nama),
+              accountEmail: Text(userProfile.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage(userProfile.fotoAset),
+              ),
+              decoration: const BoxDecoration(color: Colors.indigo),
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text('Profil'),
+              onTap: () => Navigator.pop(context),
+            ),
+            ListTile(
+              leading: const Icon(Icons.info),
+              title: const Text('Tentang Saya'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AboutPage()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -92,6 +124,26 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 30),
           ],
         ),
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        selectedItemColor: Colors.indigo,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profil'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            label: 'Tentang Saya',
+          ),
+        ],
+        onTap: (index) {
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AboutPage()),
+            );
+          }
+        },
       ),
     );
   }
