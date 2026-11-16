@@ -1,17 +1,97 @@
-# soal2_profil_app
 
-A new Flutter project.
+# Profil Rinda - UTS Aplikasi Mobile
 
-## Getting Started
+Aplikasi Profil Mahasiswa berbasis Flutter untuk memenuhi tugas Ujian Tengah Semester (UTS) mata kuliah Pemrograman Mobile.
 
-This project is a starting point for a Flutter application.
+## Identitas Mahasiswa
 
-A few resources to get you started if this is your first Flutter project:
+| Keterangan | Informasi |
+|---|---|
+| Nama | Rinda Danar Madanti |
+| NIM | 1124160124 |
+| Program Studi | Software Engineering |
+| Kelas | SE-1P24 |
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Deskripsi Aplikasi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Aplikasi Profil Rinda merupakan aplikasi sederhana berbasis Flutter yang menampilkan informasi profil mahasiswa. Aplikasi ini dilengkapi dengan halaman login, halaman profil, fitur edit profil, halaman Tentang Saya, navigasi, dan pengaturan tema gelap.
+
+Data profil dikelola sementara di dalam memori aplikasi, sehingga perubahan data berlaku selama aplikasi berjalan.
+
+## Fitur Utama
+
+1. **Login**  
+   Menampilkan halaman login dengan input username dan password. Terdapat validasi untuk memastikan kedua kolom tidak kosong serta simulasi loading sebelum masuk ke halaman profil.
+
+2. **Profil Mahasiswa**  
+   Menampilkan informasi mahasiswa berupa nama, NIM, program studi, kelas, foto profil, email, nomor HP, dan GitHub.
+
+3. **Edit Profil**  
+   Memungkinkan pengguna mengubah nama, email, dan nomor HP. Form akan terisi dengan data sebelumnya dan dilengkapi validasi input.
+
+4. **Tentang Saya**  
+   Menampilkan riwayat pendidikan, keahlian, dan hobi dalam tampilan yang dapat digulir.
+
+5. **Navigasi Aplikasi**  
+   Menggunakan Drawer dan Bottom Navigation Bar untuk membantu pengguna berpindah antara halaman Profil dan Tentang Saya.
+
+6. **Dark Mode**  
+   Menyediakan pengaturan untuk mengubah tampilan aplikasi dari tema terang ke tema gelap.
+
+## Teknologi yang Digunakan
+
+- Flutter
+- Dart
+- Android Studio / Visual Studio Code
+
+## Cara Menjalankan Aplikasi
+
+Pastikan Flutter SDK sudah terpasang di komputer.
+
+1. Clone repositori GitHub:
+
+   ```bash
+   git clone https://github.com/rindadama2-del/uts-pml-1124160124.git
+   ```
+
+2. Masuk ke folder proyek:
+
+   ```bash
+   cd uts-pml-1124160124/soal2-profil-app
+   ```
+
+3. Unduh dependencies:
+
+   ```bash
+   flutter pub get
+   ```
+
+4. Sambungkan perangkat Android dengan USB Debugging aktif atau jalankan Android Emulator.
+
+5. Jalankan aplikasi:
+
+   ```bash
+   flutter run
+   ```
+
+## Video Presentasi
+
+[Klik di sini untuk menonton video presentasi](LINK_VIDEO_YOUTUBE)
+
+## Screenshot Aplikasi
+
+### 1. Halaman Login
+
+![Halaman Login](screenshots/login.png)
+
+### 2. Halaman Profil
+
+![Halaman Profil](screenshots/profil.png)
+
+### 3. Halaman Edit Profil
+
+![Halaman Edit Profil](screenshots/edit-profil.png)
+
+## File APK
+
+File APK versi release akan tersedia melalui bagian **Releases** pada repositori GitHub setelah proses build selesai.

@@ -10,10 +10,20 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
+  
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   bool _isLoading = false;
 
-void _prosesLogin() async {
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  void _prosesLogin() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
         _isLoading = true;
@@ -27,12 +37,22 @@ void _prosesLogin() async {
 
       if (!mounted) return;
 
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const ProfilePage(),
-        ),
-      );
+      if (_usernameController.text == 'rinda' && _passwordController.text == '123456') {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const ProfilePage(),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Login Gagal: Username atau Password salah!'),
+            backgroundColor: Colors.red,
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
     }
   }
 
@@ -65,6 +85,7 @@ void _prosesLogin() async {
                 const SizedBox(height: 30),
 
                 TextFormField(
+                  controller: _usernameController,
                   decoration: const InputDecoration(
                     labelText: 'Username',
                     border: OutlineInputBorder(),
@@ -80,6 +101,7 @@ void _prosesLogin() async {
                 const SizedBox(height: 16),
 
                 TextFormField(
+                  controller: _passwordController, 
                   obscureText: true,
                   decoration: const InputDecoration(
                     labelText: 'Password',
