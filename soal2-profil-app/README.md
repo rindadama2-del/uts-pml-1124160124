@@ -82,21 +82,24 @@ Pastikan Flutter SDK sudah terpasang di komputer.
 
 ### 1. Halaman Login
 
-![Halaman Login](akan_ditambahkan)
+<img width="1080" height="2400" alt="halaman_login" src="https://github.com/user-attachments/assets/1b0f7e1e-cfac-4187-837b-2485f12af41c" />
+
 
 ### 2. Halaman Profil
 
-![Halaman Profil]()
+<img width="720" height="1600" alt="halaman_profil" src="https://github.com/user-attachments/assets/143a4b58-b0f7-452b-977e-d1e37bb37731" />
+
 
 ### 3. Halaman Edit Profil
 
-![Halaman Edit Profil]()
+<img width="1080" height="2400" alt="halaman_edit_profil" src="https://github.com/user-attachments/assets/99a0ab3c-2318-4a38-800f-04c81da081f1" />
+
 
 ## File APK
 
 File APK aplikasi dapat diunduh melalui GitHub Releases.
 
-[Unduh APK](LINK_GITHUB_RELEASE)
+[Unduh APK](https://github.com/rindadama2-del/uts-pml-1124160124/releases/tag/v1.0.0)
 
 ## Akun login untuk demo
 | Username | Password |
