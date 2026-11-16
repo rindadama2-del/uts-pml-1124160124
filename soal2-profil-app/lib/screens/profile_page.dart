@@ -34,13 +34,23 @@ class _ProfilePageState extends State<ProfilePage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.edit),
-            onPressed: () {
-              Navigator.push(
+            onPressed: () async {
+              final result = await Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => EditProfilePage(currentProfile: userProfile),
                 ),
               );
+
+              if (result != null) {
+                setState(() {
+                  userProfile = result as Profile;
+                });
+                
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Profil berhasil diperbarui!')),
+                );
+              }
             },
           ),
         ],

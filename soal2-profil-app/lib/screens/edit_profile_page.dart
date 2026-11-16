@@ -94,9 +94,18 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Form Valid! Siap dikirim di commit selanjutnya')),
+                    Profile dataBaru = Profile(
+                      nama: _namaController.text,
+                      email: _emailController.text,
+                      noHp: _noHpController.text,
+                      nim: widget.currentProfile.nim,
+                      prodi: widget.currentProfile.prodi,
+                      kelas: widget.currentProfile.kelas,
+                      github: widget.currentProfile.github,
+                      fotoAset: widget.currentProfile.fotoAset,
                     );
+
+                    Navigator.pop(context, dataBaru);
                   }
                 },
                 child: const Text('Simpan'),
