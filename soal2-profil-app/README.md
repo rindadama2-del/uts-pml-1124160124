@@ -21,7 +21,7 @@ Data profil dikelola sementara di dalam memori aplikasi, sehingga perubahan data
 ## Fitur Utama
 
 1. **Login**  
-   Menampilkan halaman login dengan input username dan password. Terdapat validasi untuk memastikan kedua kolom tidak kosong serta simulasi loading sebelum masuk ke halaman profil.
+   Menampilkan halaman login dengan input username dan password. Terdapat validasi untuk memastikan kolom tidak kosong dan mengecek kecocokan kredensial akun, serta terdapat simulasi loading sebelum masuk ke halaman profil.
 
 2. **Profil Mahasiswa**  
    Menampilkan informasi mahasiswa berupa nama, NIM, program studi, kelas, foto profil, email, nomor HP, dan GitHub.
@@ -42,7 +42,7 @@ Data profil dikelola sementara di dalam memori aplikasi, sehingga perubahan data
 
 - Flutter
 - Dart
-- Android Studio / Visual Studio Code
+- Visual Studio Code
 
 ## Cara Menjalankan Aplikasi
 
@@ -82,16 +82,23 @@ Pastikan Flutter SDK sudah terpasang di komputer.
 
 ### 1. Halaman Login
 
-![Halaman Login](screenshots/login.png)
+![Halaman Login](akan_ditambahkan)
 
 ### 2. Halaman Profil
 
-![Halaman Profil](screenshots/profil.png)
+![Halaman Profil]()
 
 ### 3. Halaman Edit Profil
 
-![Halaman Edit Profil](screenshots/edit-profil.png)
+![Halaman Edit Profil]()
 
 ## File APK
 
-File APK versi release akan tersedia melalui bagian **Releases** pada repositori GitHub setelah proses build selesai.
+File APK aplikasi dapat diunduh melalui GitHub Releases.
+
+[Unduh APK](LINK_GITHUB_RELEASE)
+
+## Akun login untuk demo
+| Username | Password |
+|---|---|
+| rinda | 123456 |
