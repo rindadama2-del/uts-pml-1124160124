@@ -19,7 +19,13 @@ class InfoTile extends StatelessWidget {
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: ListTile(
-        leading: Icon(icon, color: Theme.of(context).primaryColor, size: 28),
+        leading: Icon(
+        icon,
+        size: 28,
+        color: Theme.of(context).brightness == Brightness.dark 
+            ? Colors.white 
+            : Theme.of(context).primaryColor,
+      ),
         title: Text(
           title,
           style: const TextStyle(

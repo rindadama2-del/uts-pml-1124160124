@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../models/profile.dart';
-import '../widgets/info_tile.dart';
+import 'package:soal2_profil_app/models/profile.dart';
+import 'package:soal2_profil_app/widgets/info_tile.dart';
 import 'about_page.dart';
 import 'edit_profile_page.dart';
+import 'package:soal2_profil_app/main.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -20,7 +21,7 @@ class _ProfilePageState extends State<ProfilePage> {
     kelas: 'SE-1P24',
     email: 'rinda@gmail.com',
     noHp: '0812345678',
-    github: 'rindadama-del',
+    github: 'rindadama2-del',
     fotoAset: 'assets/images/foto_rinda.png',
   );
 
@@ -38,17 +39,19 @@ class _ProfilePageState extends State<ProfilePage> {
               final result = await Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => EditProfilePage(currentProfile: userProfile),
+                  builder: (context) =>
+                      EditProfilePage(currentProfile: userProfile),
                 ),
               );
+              if (!context.mounted) return;
 
               if (result != null) {
                 setState(() {
                   userProfile = result as Profile;
                 });
-                
+
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Profil berhasil diperbarui!')),
+                  const SnackBar(content: Text('Profil berhasil diperbarui')),
                 );
               }
             },
@@ -80,6 +83,22 @@ class _ProfilePageState extends State<ProfilePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const AboutPage()),
+                );
+              },
+            ),
+            const Divider(),
+            ValueListenableBuilder<ThemeMode>(
+              valueListenable: themeNotifier,
+              builder: (context, mode, child) {
+                return SwitchListTile(
+                  title: const Text('Mode Gelap'),
+                  secondary: const Icon(Icons.dark_mode),
+                  value: mode == ThemeMode.dark,
+                  onChanged: (value) {
+                    themeNotifier.value = value
+                        ? ThemeMode.dark
+                        : ThemeMode.light;
+                  },
                 );
               },
             ),

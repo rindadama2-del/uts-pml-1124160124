@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/profile.dart';
+import 'package:soal2_profil_app/models/profile.dart';
 
 class EditProfilePage extends StatefulWidget {
   final Profile currentProfile;
@@ -79,10 +79,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
               
               TextFormField(
                 controller: _noHpController,
+                keyboardType: TextInputType.phone, 
                 decoration: const InputDecoration(
                   labelText: 'Nomor HP',
                   border: OutlineInputBorder(),
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Nomor HP tidak boleh kosong';
+                  }
+                
+                  if (value.length < 10 || value.length > 13) {
+                    return 'Nomor HP harus 10 - 13 digit';
+                  }
+
+                  if (int.tryParse(value) == null) {
+                    return 'Nomor HP harus berupa angka';
+                  }
+                  
+                  return null; 
+                },
               ),
               const SizedBox(height: 24),
               
