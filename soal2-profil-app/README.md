@@ -76,7 +76,7 @@ Pastikan Flutter SDK sudah terpasang di komputer.
 
 ## Video Presentasi
 
-[Klik di sini untuk menonton video presentasi](LINK_VIDEO_YOUTUBE)
+[Klik di sini untuk menonton video presentasi](https://youtu.be/VDNHdn8bhV0?si=YscjOmBGlBVyQMdH)
 
 ## Screenshot Aplikasi
 
